@@ -1,0 +1,36 @@
+----------------Aho, Weinberger, and Kernighan.-----'AWK' IS A SCRIPTING LANGUAGE USED FOR MANIPULATING DATA AND GENERATING REPORTS.----Awk is mostly used for pattern scanning and processing---------------
+
+Syntax:::awk options 'selection _criteria {action }' input-file > output-file
+----- ---- ----- ----- ------ -------- -------------------
+-f program-file : Reads the AWK program source from the file 
+                  program-file, instead of from the 
+                  first command line argument.
+-F fs            : Use fs for the input field separator
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1)awk '{print}' filename --->prints every line of data
+
+2)awk '/pattern/ {print}' filename --->Print the lines which match the given pattern.
+
+3)awk '{print $1,$4}' filename --->Print the 1st and 4th column of file (Splitting a Line Into Fields)
+
+4)awk '{print NR,$0}' filename ---> NR-count the number , $0---> print all the columns
+
+5)awk '{print $1,$NF}' filename --->$NF==last field/column
+
+6)awk 'NR==3, NR==6 {print NR,$0}' filename --->NR==3-->from the 3rd row to NR==6 to the 6th row,NR==no. of rows,$0 to print all the columns
+
+7)awk '{print NR "- " $1 }' filename ---> To print the first item along with the row number(NR) separated with ” – “ from each line in the file
+
+8)awk '{print $2 }' filename --> to print the 2nd column/item from file
+
+9)awk 'NF < 0 ' filename  OR awk 'NF<=0{print NR}' filename--> to print any non empty line if present 
+
+10)awk '{ if (length($0) > max) max = length($0) } END { print max }' filename -->To find the length of the longest line present in the file means number of characters
+
+11)awk 'END { print NR }' filename ---> to count the lines in a file
+
+12)awk '{ if($3 == "B6") print $0;}' filename---> To find/check for any string in any specific column
+
+13)awk 'length($0) > 10' filename ---> print lines with more than 10 characters
+
+14)awk 'BEGIN { for(i=1;i<=6;i++) print "square of", i, "is",i*i }' --->  To print the squares of first numbers from 1 to n say 6: 

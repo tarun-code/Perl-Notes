@@ -1,0 +1,63 @@
+ctrl+l-----to clear
+ctrl+z----to push background
+fg---to comes into foreground
+cd
+popd,cd -,pushd <path> -----to go back
+top----to see the status of running things
+
+ctrl+r ---open search to find any command
+
+!<number comes in history>------to run the attached command
+histtimeformat="%y-%m-%d %t "---enter history---to see the date and time of the history
+
+
+tail -f <path or filename>--(eg./var/log/syslog)----to go to end of the nay paragraph
+
+truncate -s 0 <filename>----delete the items of the files
+ mount | column -t ------- to see the mounted files on system
+==============================================================================================================================================================================
+-----------------------GREP---GLOBAL REGULAR EXPRESSION PRINT--"COMMAND-LINE TOOL USED TO SEARCH FOR A STRING OF CHARACTERS IN A SPECIFIED FILE."-----------------------------
+grep <options> <pattern> <filename>
+
+1)grep -c unix grep.txt ---> count the number of lines where pattern match
+
+2)grep -h unix grep.txt---> display the matched lines
+
+3) grep -i unix grep.txt--->ignores the case of matching
+
+4) grep -n unix grep.txt---> display the number and lines of mathced pattern
+
+5)grep -v unix grep.txt-->prints out all the lines that do not matches the pattern #invert lines
+
+6) grep -e unix grep.txt---> taking the pattern until full-stop.
+
+7) grep -f grep.txt unix grep.txt--->takes pattern from file once per line
+
+8)grep -o unix grep.txt--->print only the matched parts of a matching line,
+ with each such part on a separate output line.
+
+9)grep -w easy grep.txt--->match the whole word
+
+10)grep -ir multiuser /home/hpcsa51/documents--->search the pattern in the directory
+
+11)grep "^unix" grep.txt---> starting with the lines having pattern
+
+12)grep "unix$" grep.txt---> ending with the lines having pattern
+
+13)grep -R [Search] [directory]-->prints the searched pattern in the given directory recursively in all the files.
+
+====================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

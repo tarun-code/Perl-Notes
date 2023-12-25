@@ -1,0 +1,97 @@
+----------------SED---STREAM EDITOR---"IT CAN PERFORM LOTS OF FUNCTIONS ON FILE LIKE SEARCHING, FIND AND REPLACE, INSERTION OR DELETION."------------------------------------------
+
+1)sed 's/unix/linux/' sed.txt---> used to change one word to another
+
+2) sed 's/unix/linux/g' sed.txt---> change all the occurences
+
+3)echo "welcome to the geek stuff" | sed 's/\(\b[a-z]\)/\(\1\)/g'----.print first letter of every word in ().
+
+4)sed '1 s/unix/linux/' sed.txt--> 1 represent the no of line in which changes happens
+
+5) sed 's/linux/unix/p' sed.txt--> duplicate the changed file
+
+6)sed -n 's/linux/unix/p' sed.txt--->prints only the replaced lines,here -n suppress the duplicate rows genrated by /p flag
+
+7) sed '1,3 s/unix/linux/' sed.txt-->range of line no to replace a string.
+
+8)sed '1,$/unix/linux' sed.txt---> replace from 1 to ($)last
+---------------------------------DELETE LINES-----------------------------------------------------------------------------------------------------------------------------------------
+9) sed also used to delete lines from a file
+  i)sed '1d' sed.txt --> delete the particular line here 1 is for first line
+  
+  ii)sed '$d' sed.txt --> to delete the last line
+
+ iii)sed '3,5d' sed.txt -->to delete the range 3 to 5
+
+  iv)sed '3,$d' sed.txt--> to delete nth to last line
+
+   v)sed '/linux/d' sed.txt--> to delete the pattern matching line
+
+   vi)sed '3~2d' a.txt---> delete from 3rd line and after that every 2nd line
+
+----------------------------------------------------------------MORE SED COMMANDS-------------------------------------------------------------------------------------------------------
+10)sed g a.txt -->insert blank line after each line
+
+11)sed '/^$/d;g' a.txt-->delete blank line and insert new blank lines
+
+12)sed '/love/{x;p;x;}' a.txt-->insert a blank line above every line which matches “love”
+
+13)sed '/love/g' a.txt--> insert a blank line below every line which matches “love” 
+
+14)sed 's/^/     /' a.txt-->insert 5 spaces to the left of every lines 
+----------------------------------------------------------------#NUMBERING LINES----------------------------------------------------------------------------------------------------------
+14)sed =  a.txt | sed 'n;s/\n/\t/'-->number each line of a file (left alignment). **=** is used to number the line. \t is used for tab between number and sentence
+
+15)sed = a.txt | sed 'n; s/^/     /; s/ *\(.\{4,\}\)\n/\1  /'--->number each line of a file (number on left, right-aligned). this command is similar to `cat -n filename`.
+
+16)sed 'g;g' a.txt-->insert two blank lines
+
+17) sed '/./=' a.txt | sed '/./n; s/\n/ /'--->number each line of file,only if line is not blank
+-----------------------------------------------------------------#DELETING LINES-----------------------------------------------------------------------------------------------------------
+
+18)sed ‘/pattern/,+2d’ filename--->delete the lines which matches the pattern and 2 lines after to that
+
+19)sed '/^$/d' a.txt---> delete blank lines
+
+20)sed '/^#/d;/^$/d' a.txt--->delete empty lines or those begins with “#” 
+------------------------------------------------------------# VIEW/PRINT THE FILES----------------------------------------------------------------------------------------------------------
+21)sed -n ‘x,yp’ filename -->view file from x to y range
+
+22)sed ‘x,yd’ filename --->view the entire file except the given range
+
+23)sed -n ‘address’p filename ---> print nth line of the file
+
+24)sed -n '4,6'p filename ---> print line from xth to yth line
+
+24)sed -n ‘n,$’p filename----> print from nth line to end of file
+ 
+------------------------------------------------------------#PATTERN PRINTING----------------------------------------------------------------------------------------------------------
+
+25) sed -n /pattern/p filename -->print the line only mathches the pattern
+
+26)sed -n ‘/pattern/,xp’ filename-->print the pattern line to xth line//use $ to print to the end of the line
+
+27)sed -n '1,/everyone/p' filename-->print from xth line to the patterned line if pattern not found it printed to the end of the line
+
+28)sed -n ‘/pattern/,+xp’ filename-->print the lines to the patterned up to the next xth line
+------------------------------------------------------------#REPLACEMENT WITH SED COMMAND----------------------------------------------------------------------------------------------------------
+29)sed 's/life/leaves/n' a.txt--->change the nth occurrence of the pattern 
+
+30)sed 's/life/learn/g' a.txt-->change all the occurrence of the pattern
+
+31) sed ‘m s/old_pattern/new_pattern/’ filename-->Replacing pattern on a specific line number. Here, “m” is the line number.
+
+32)sed -n '3 s/every/each/p' a.txt-->if want to print only the replaced line
+
+33)sed ‘x,y s/old_pattern/new_pattern/’ filename-->Replace string on a defined range of lines 
+
+34)sed ‘s/old_pattern/new_pattern/i’ filename -->If you wish to replace pattern in order to ignore character case (beginning with uppercase or lowercase)
+ OR
+sed 's/[Ll]ife/Love/g' a.txt-->By using regular expressions 
+
+35)sed 's/  */ /g' filename-->to replace multiple spaces with a single space
+
+36)sed '/is/ s/live/love/' a.txt-->Replace one pattern followed by the another pattern
+
+37) sed ‘n!s/old_pattern/new_pattern/’ filename -->Replace a pattern with other except in the nth line. 
+

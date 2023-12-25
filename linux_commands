@@ -1,0 +1,52 @@
+tac---->tac command in Linux is used to concatenate and print files in reverse. This command will write each FILE to standard output, the last line first. When no file is specified then this command will read the standard input.
+-----------------------------------------------------------------------------------------------------------
+1.tac filename----> print the contents in reverse order
+
+2.tac -b file1 file2 --->attach the seperator before instead of after
+
+3.locate ---> used to locate all the files inside the directory
+
+4.file -b filename--->used to display the file type
+
+5.file -b filename---> display all the file type in the searched directory
+
+6.find filename ---> open all the files of a directory
+
+7.ln filename1 filename2 ---> ln=link it creates link of one file to other,f1 contents copied to f2
+
+8.ln file1 file2 directory--->makes copy of file1 and file2 in the directory
+
+9.ln -s file1 file2---->ls -l--->lrwxrwxrwx 1 hpcsa51 hpcsa51 4 Nov 17 20:37 demo3 -> demo created a link
+
+10.gzip mydoc.txt-->This command will create a compressed file of mydoc.txt named as mydoc.txt.gz and delete the original file.
+
+11.gzip -f filename---> forcefully if filename.gz file already present
+
+12.gunzip filename.gz --->to unzip
+
+13.gunzip -c filename.gz---->unzip and read it
+
+14.zip newfile.zip filename--->newfile.zip is the file where you want to zip and filename is file to zip
+
+15.unzip myfile.zip----> unzip the file.zip
+
+16.zcat filename.zip---> to read the contents of zipped files :) :) :0
+
+17.banner text,number..---> display banner--->yum install banner to do so
+
+18.figlet text,number---> display like banner-->yum install figlet to do so
+
+19.wc filename---> to count the no of line,no of words,no of characters respectively.
+
+20.finger username--->to display info -->yum install finger to do so.
+
+21.finger -s username--->To get idle status and login details of a user.
+
+22.whoami----->where you working currently
+
+23.who am i ---> logged in info 
+
+24.pushd ~/Desktop/---> take you to Desktop
+
+
+

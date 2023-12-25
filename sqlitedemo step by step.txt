@@ -1,0 +1,31 @@
+1. create a folder c:\sqlite3
+2. extract files form sqlite3tools***.zip into c:\sqlite3
+3. Set the path variable
+4. open cmd
+5. cd c:\sqlite3
+6. c:\sqlite3>sqlite3 mydb1.db
+7. It will change the prompt to sqlite3>
+8. Create table
+     create table mytable(id int,name text,sal int);
+9. To insert data
+     insert into mytable values(10,'aaaa',2345);
+     insert into mytable values(20,'sssss',3456);
+     insert into mytable values(34,'ffff',4567);
+10. To view records
+     select * from mytable;
+12. To delete record
+     delete from mytable where id=20;
+13. See the records
+     select * from mytable;
+14. To modify the values in the record
+     update mytable set name="xxxxxx",sal=sal*1.1 where id=34;
+15. view records
+select * from mytable
+15. modify sal of all
+    update mytable set sal=sal+1000;
+16. To display records in sorted order
+    select * from mytable
+    order by name;
+
+  
+
